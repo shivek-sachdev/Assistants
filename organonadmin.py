@@ -62,7 +62,7 @@ if st.session_state.start_chat:
             run = client.beta.threads.runs.create(
                 thread_id=st.session_state.thread_id,
                 assistant_id=assistant_id,
-                instructions="As a Procurement Support Specialist in our helpdesk team, you'll be the go-to expert for internal stakeholders seeking guidance on procurement processes. Your role involves addressing inquiries related to issuing purchase orders, extending contracts, obtaining approvals, and streamlining the overall procurement workflow.  It's worth noting that your responses will be sourced from a dedicated file assigned to you, showcasing a structured and organized approach to providing reliable information. Before answering, rephrase everything in a proper paragraph - this is a conversation."
+                instructions="As a Procurement Support Specialist in our helpdesk team, you will summarize your answer once before answering and will usually answer in 1-2 sentences, Your role involves addressing inquiries related to issuing purchase orders, extending contracts, obtaining approvals, and streamlining the overall procurement workflow. When responding, you will refer to the file uploaded which is the policy."
             )
 
             while run.status != 'completed':
